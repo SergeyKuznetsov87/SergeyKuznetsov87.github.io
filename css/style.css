@@ -1,24 +1,34 @@
 :root {
     --main-collor: #149ddd;
     --border-icons-color: #2c2f3f;
-    --tablet-width: 768px;
-    --desktop-width: 992px;
 }
 
 /* Стили хидера */
 
 .page-body{
-    margin: 0 auto;    
+    margin: 0 auto;  
 }
 
-.page-header{
+.page-header{    
     position: fixed;
     top: 0;
     left: 0;
     width: 300px;
     background-color: #040b14;
     height: 100%;
+    overflow-y: auto;
+    transition: all 0.5s;
+    
 }
+
+.page-header--closed.page-header{
+    left: -300px;
+
+    @media (min-width: 992px){
+        left: 0;
+    }
+}
+
 
 .page-header__toggle{
     position: fixed;
@@ -29,9 +39,12 @@
     background-color: var(--main-collor);
     border-radius: 50%;
     border: none;
-
     
+    @media (min-width: 992px){
+        display: none;
+    }
 }
+
 
 .page-header--closed .page-header__toggle::before{
     position: fixed;
@@ -58,15 +71,12 @@
                     
     ::before{
         transform: rotate(45deg);
-        
     } 
     
     ::after{
         transform: rotate(-45deg);
-        
     } 
 }
-
 
 
 .page-header__foto{
@@ -84,8 +94,6 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
-
-    
 }
 
 .social__list{
@@ -111,41 +119,54 @@
 }
 
 .main-nav{
-    padding: 30px 0 0 0;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-
 }
 
 
 
 .main-nav__list{
+    padding-left: 20px;
     list-style-type: none;
-    
 }
 
 .main-nav__item{
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     padding-left: 58px;
-    
-    
+
 }   
 
 .main-nav__link{
     text-decoration: none;
-    color: ghostwhite;
+    color: #a8a9b4;
 }
+
+.main-nav__link:hover{
+    color: white;
+}
+
 
 .main-nav__img{
     position: absolute;
-    top: 0px;
+    top: -2px;
     left: 21px;
     width: 25px;
     height: 25px;
+    fill: white;
 }
+
+
+.main-nav__img:hover{
+    fill: var(--main-collor);
+}
+
+
+
+
+
 
 
